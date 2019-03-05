@@ -18,21 +18,21 @@ fetch(queryURL)
 	// Convert to absolute URLs
 	.then((links) => links.map(a => `${host}${a.href}`))
 	// Subset to test
-	.then((links) => links.slice(0, 2))
+	// .then((links) => links.slice(0, 2))
 	.then((links) =>
 		Promise.all(links.map(url =>
 			fetch(url)
 				.then(resp => resp.text())
 				.then((body) => {
 					// Get the URLS of courses from search results
-					console.log(body);
+					// console.log(body);
 					const searchDom = new JSDOM(body);
 					let doc = searchDom.window.document;
 					let occurrences = [...doc.querySelectorAll('h5')].filter((e) => e.textContent === 'Qualifications or experience');
-						return occurrences ? undefined : 'todo'
+					console.log(occurrences.length);
+					return occurrences.length === 0 ? url : 'Processed';
 				})
-		)).then(texts => {
-			return texts
-		})
+		)).then(texts => texts.filter((text) => text !== 'Processed'))
+		// )).then(texts => texts)
 	)
 	.then(console.log);
