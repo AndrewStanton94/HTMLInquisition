@@ -1,0 +1,12 @@
+{
+  "name": "HTMLInquisition",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AndrewStanton94/HTMLInquisition.git",
+  "author": "Andrew Stanton <up683693@myport.ac.uk>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "jsdom": "^13.2.0",
+    "node-fetch": "^2.3.0"
+  }
+}
