@@ -7,6 +7,6 @@
   "license": "GPL-3.0",
   "dependencies": {
     "jsdom": "^13.2.0",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.6.7"
   }
 }
